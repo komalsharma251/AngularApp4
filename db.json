@@ -1,0 +1,52 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "title": "Spring Tech Meetup",
+      "description": "A networking event for developers.",
+      "category": "Technology",
+      "location": "Toronto",
+      "startDate": "2026-04-10",
+      "endDate": "2026-04-10",
+      "organizerEmail": "organizer@example.com",
+      "attendees": 50
+    },
+    {
+      "id": "2",
+      "title": "Figma Workshop",
+      "description": "Figma Workshop for Beginners",
+      "category": "Technology",
+      "location": "Brampton",
+      "startDate": "2026-03-31",
+      "endDate": "2026-03-31",
+      "organizerEmail": "komalsharma251@gmail.com",
+      "attendees": 15
+    },
+    {
+      "title": "Networking Webinar",
+      "description": "Information about Networking.",
+      "category": "Business",
+      "location": "Toronto",
+      "startDate": "2026-03-30",
+      "endDate": "2026-03-30",
+      "organizerEmail": "reema221093@gmail.com",
+      "attendees": 1,
+      "id": "usqvAmT3pOM"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "1",
+      "name": "Test User",
+      "email": "test@example.com",
+      "message": "Hello, I need more information about events."
+    },
+    {
+      "name": "Rehaan shori",
+      "email": "rehaanshori@gmail.com",
+      "message": "Welcome to the web development team",
+      "id": "cPc9-5Vpyc0"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

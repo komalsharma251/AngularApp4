@@ -1,0 +1,34 @@
+<mat-toolbar color="primary" class="navbar">
+
+  <!-- Logo -->
+  <div class="logo">
+    <span class="logo-icon">📅</span>
+    <span class="logo-text">Event Planner</span>
+  </div>
+
+  <span class="spacer"></span>
+
+  <!-- Desktop Navigation -->
+  <nav class="nav-links">
+    <a mat-button routerLink="/events" routerLinkActive="active-link">
+      <mat-icon>event</mat-icon>
+      Events
+    </a>
+
+    <a mat-button routerLink="/create-event" routerLinkActive="active-link">
+      <mat-icon>add_circle</mat-icon>
+      Create
+    </a>
+
+    <a mat-button routerLink="/rsvp" routerLinkActive="active-link">
+      <mat-icon>how_to_reg</mat-icon>
+      RSVP
+    </a>
+
+    <a mat-button routerLink="/contact" routerLinkActive="active-link">
+  Contact
+</a>
+
+  </nav>
+
+</mat-toolbar>

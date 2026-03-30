@@ -1,0 +1,68 @@
+<div class="page">
+  <h2>RSVP Form</h2>
+
+  <form #rsvpForm="ngForm" (ngSubmit)="submitRsvp(rsvpForm)">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Full Name</mat-label>
+      <input
+        matInput
+        name="name"
+        [(ngModel)]="rsvp.name"
+        required
+        #name="ngModel"
+      />
+      <mat-error *ngIf="name.invalid && name.touched">
+        Name is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        name="email"
+        [(ngModel)]="rsvp.email"
+        required
+        email
+        #emailField="ngModel"
+      />
+      <mat-error *ngIf="emailField.errors?.['required'] && emailField.touched">
+        Email is required.
+      </mat-error>
+      <mat-error *ngIf="emailField.errors?.['email'] && emailField.touched">
+        Please enter a valid email.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Number of Guests</mat-label>
+      <input
+        matInput
+        type="number"
+        name="guests"
+        [(ngModel)]="rsvp.guests"
+        required
+        min="1"
+        #guests="ngModel"
+      />
+      <mat-error *ngIf="guests.invalid && guests.touched">
+        Guests must be 1 or more.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Message</mat-label>
+      <textarea
+        matInput
+        name="message"
+        [(ngModel)]="rsvp.message"
+        rows="4"
+      ></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="accent" type="submit">
+      Submit RSVP
+    </button>
+  </form>
+</div>

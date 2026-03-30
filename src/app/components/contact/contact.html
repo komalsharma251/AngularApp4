@@ -1,0 +1,26 @@
+<div class="page">
+  <h2>Contact Us</h2>
+
+  <form #contactForm="ngForm" (ngSubmit)="submit(contactForm)">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput name="name" ngModel required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput name="email" ngModel required email>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Message</mat-label>
+      <textarea matInput name="message" ngModel required minlength="10"></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">
+      Send Message
+    </button>
+
+  </form>
+</div>

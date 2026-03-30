@@ -1,0 +1,112 @@
+<div class="page">
+
+  <!-- 🔥 HEADER -->
+  <div class="page-header">
+    <div class="header-content">
+      <h1>🎉 Event Planner</h1>
+      <p>Discover, create and manage upcoming events</p>
+    </div>
+
+    <div class="header-actions">
+      <mat-chip class="status-chip" *ngIf="loading">
+        Loading events...
+      </mat-chip>
+
+      <mat-chip class="status-chip success" *ngIf="!loading">
+        {{ filteredEvents.length }} Events
+      </mat-chip>
+    </div>
+  </div>
+
+  <!-- 🔥 FILTER BAR -->
+  <div class="filter-bar">
+
+    <!-- 🔍 Search -->
+    <mat-form-field appearance="outline" class="search-field">
+      <mat-label>Search events</mat-label>
+      <input
+        matInput
+        [(ngModel)]="searchTerm"
+        (input)="applyFilters()"
+        placeholder="Search by title or description"
+      />
+    </mat-form-field>
+
+    <!-- 📂 Category -->
+    <mat-form-field appearance="outline" class="filter-field">
+      <mat-label>Category</mat-label>
+      <mat-select
+        [(ngModel)]="selectedCategory"
+        (selectionChange)="applyFilters()"
+      >
+        <mat-option *ngFor="let cat of categories" [value]="cat">
+          {{ cat }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <!-- 🔄 LOADING STATE -->
+  <div *ngIf="loading" class="loading-state">
+    <mat-card>
+      <mat-card-content>
+        <p>Loading events, please wait...</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- ❌ EMPTY STATE (NO EVENTS AT ALL) -->
+  <div *ngIf="!loading && events.length === 0" class="empty-state">
+    <mat-card class="empty-card">
+      <mat-card-content>
+        <div class="empty-content">
+          <h3>No Events Found</h3>
+          <p>There are no events available right now.</p>
+          <p>Create your first event to get started 🚀</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- 🔍 NO RESULTS (FILTER CASE) -->
+  <div *ngIf="!loading && events.length > 0 && filteredEvents.length === 0" class="empty-state">
+    <mat-card class="empty-card">
+      <mat-card-content>
+        <div class="empty-content">
+          <h3>No Matching Events</h3>
+          <p>Try changing your search or filters.</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- 🔥 EVENT GRID -->
+  <div class="event-grid">
+    <mat-card *ngFor="let event of filteredEvents" class="event-card">
+
+      <mat-card-title>{{ event.title }}</mat-card-title>
+
+      <mat-card-content>
+        <p>{{ event.description }}</p>
+
+        <div class="event-meta">
+          <span>📍 {{ event.location }}</span>
+          <span>📅 {{ event.startDate }}</span>
+        </div>
+
+        <div class="event-footer">
+          <mat-chip-listbox>
+            <mat-chip color="primary" selected>
+              {{ event.category }}
+            </mat-chip>
+          </mat-chip-listbox>
+
+          <span>{{ event.attendees }} Attendees</span>
+        </div>
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+
+</div>
