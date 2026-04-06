@@ -40,6 +40,9 @@ export class EventService {
     );
   }
 
+
+
+  
   //  CHECK TITLE EXISTS (ASYNC VALIDATOR)
   checkTitleExists(title: string): Observable<boolean> {
     return this.http

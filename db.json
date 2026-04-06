@@ -32,6 +32,28 @@
       "organizerEmail": "reema221093@gmail.com",
       "attendees": 1,
       "id": "usqvAmT3pOM"
+    },
+    {
+      "title": "Swift",
+      "description": "Swift For beginners",
+      "category": "Technology",
+      "location": "Brampton",
+      "startDate": "2026-04-08",
+      "endDate": "2026-04-08",
+      "organizerEmail": "komalsharma251@gmail.com",
+      "attendees": 25,
+      "id": "sSMKyj7ZlBs"
+    },
+    {
+      "title": "Interview Success Strategy",
+      "description": "How to crack interviews",
+      "category": "Education",
+      "location": "Brampton",
+      "startDate": "2026-04-07",
+      "endDate": "2026-04-07",
+      "organizerEmail": "komalsharma251@gmail.com",
+      "attendees": 15,
+      "id": "gEyWLzDikT8"
     }
   ],
   "contacts": [
@@ -46,6 +68,12 @@
       "email": "rehaanshori@gmail.com",
       "message": "Welcome to the web development team",
       "id": "cPc9-5Vpyc0"
+    },
+    {
+      "name": "Navjot",
+      "email": "navshori@yahoo.com",
+      "message": "Hello, how are you",
+      "id": "NGcXoUZeK_A"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -22,6 +22,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { EventStatusPipe } from '../../pipes/event-status-pipe';
 
 @Component({
   selector: 'app-event-list',
@@ -33,6 +34,7 @@ import { MatSelectModule } from '@angular/material/select';
   imports: [
     CommonModule,
     FormsModule,
+    EventStatusPipe,  
     MatCardModule,
     MatSnackBarModule,
     MatChipsModule,
@@ -95,6 +97,8 @@ export class EventListComponent implements OnInit {
       }
     });
   }
+
+  
 
   /**
    * Apply search + category filters
