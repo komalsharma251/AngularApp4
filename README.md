@@ -1,78 +1,141 @@
-#  AngularApp4 - Event Management System
+# 🎉 Event Planner App (Angular Assignment)
 
-## 📌 Project Overview
-AngularApp4 is a modern **Event Management Web Application** built using Angular.  
-It allows users to create, view, filter, and manage events along with RSVP and Contact features.  
-The project demonstrates Angular Forms, Angular Material UI, validation, and JSON-server integration.
+A modern **Event Management Web Application** built using Angular, Angular Material, and JSON Server.  
+This project demonstrates core Angular concepts including components, services, pipes, routing, reactive UI, and API integration.
 
 ---
 
-## 🚀 Features
+# 📌 Project Overview
 
-### 🎯 Event Management
-- Create new events using **Reactive Forms**
-- View all events in a clean UI
-- Filter events by:
-  - Category
-  - Search keyword
-- Display event details using Angular Material cards
-
----
-
-### 📝 Forms Implemented
-
-#### 1. Reactive Form (Create Event)
-- Full validation system:
-  - Required fields
-  - Email validation
-  - Minimum length checks
-  - Custom validation:
-    - ✅ Unique event title (async validator)
-    - ✅ Date range validation
-- Angular Material UI components used:
-  - `mat-form-field`
-  - `mat-input`
-  - `mat-select`
-  - `mat-datepicker`
+The Event Planner App allows users to:
+- View upcoming events
+- Search and filter events
+- View event status (Upcoming / Ongoing / Completed)
+- Highlight events dynamically
+- Manage event data using a JSON backend
 
 ---
 
-#### 2. Template-driven Forms
-- RSVP Form
-- Contact Form
-- Basic validation with user-friendly messages
-- Snackbar notifications on submit
+# 🚀 Features
+
+## 🧩 Core Features
+- 📋 Event listing from API (JSON Server)
+- 🔍 Search events by title/description
+- 📂 Filter by category
+- 📊 Event status indicator (custom pipe)
+- 🎨 Highlight upcoming/ongoing/completed events
+- ⚡ Loading state handling
+- 📭 Empty state handling
+
+## 🛠 CRUD Features
+- ➕ Add event (Reactive Form)
+- 📖 View event list
+- ❌ Delete event (optional feature)
 
 ---
 
-##  Validation Features
-- Required field validation
-- Email format validation
-- Minimum character validation
-- Custom synchronous validation (date range)
-- Custom asynchronous validation (unique title check)
+# 🧠 Angular Concepts Used
+
+- Components (Modular structure)
+- Services (API communication using HttpClient)
+- Pipes (Custom event status pipe)
+- Routing (Lazy loading modules)
+- Reactive Forms
+- Observables (RxJS)
+- Angular Material UI components
 
 ---
 
-## 🎨 UI/UX (Angular Material)
-- Clean and responsive design
-- Angular Material components:
-  - Toolbar
-  - Cards
-  - Buttons
-  - Forms
-  - Snackbar notifications
-- Modern UI styling with Material Design 3
+# 📁 Folder Structure
+
+
+src/app/
+│
+├── components/
+│ ├── event-list/
+│ ├── create-event/
+│ ├── contact/
+│
+├── services/
+│ └── event.service.ts
+│
+├── pipes/
+│ └── event-status.pipe.ts
+│
+├── models/
+│ └── event.model.ts
+│
+├── pages/
+│ └── home/
+
 
 ---
 
-## 🌐 Backend (JSON Server)
-This project uses **json-server** as a fake REST API.
+# 🔌 Backend (JSON Server)
 
-### Endpoints:
-- `/events` → Event data
-- `/contacts` → Contact form submissions
+This project uses JSON Server as a mock backend.
 
-### Run JSON Server:
+## ▶ Run backend:
 ```bash
+json-server --watch db.json
+📂 API Endpoint:
+http://localhost:3000/events
+⚙️ Installation & Setup
+1️⃣ Install dependencies
+npm install
+2️⃣ Run Angular app
+ng serve
+3️⃣ Run JSON server
+json-server --watch db.json
+🧪 Testing & Debugging
+
+The application was tested using:
+
+Chrome Developer Tools (Console)
+Network tab (API verification)
+JSON Server response validation
+UI testing (search, filter, CRUD operations)
+⚡ Production Build (Optimization)
+
+The application was optimized using Angular production build:
+
+ng build --configuration production
+✔ Optimizations included:
+Code minification
+Lazy loading chunks
+Tree shaking
+Reduced bundle size
+Optimized asset loading
+📦 Production Output
+
+The production build is generated in:
+
+dist/event-planner/browser
+🖼 UI Screenshots Included
+Home page with event list
+Search and filter functionality
+Event status highlighting
+Loading & empty states
+Production build output
+👨‍💻 Developer Notes
+Built as part of Angular Assignment 5
+Focus on modular architecture and reusability
+Clean separation of components, services, and pipes
+API-driven architecture using JSON Server
+🤖 AI Usage Reflection
+
+AI tools were used to:
+
+Debug Angular service and routing issues
+Improve UI structure and layout design
+Optimize folder structure and best practices
+Learning Outcome:
+Better understanding of Angular architecture
+Improved knowledge of RxJS and services
+Learned production build optimization process
+📌 Author
+
+Komal Sharma
+Angular Development Assignment
+2026
 json-server --watch db.json --port 3000on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
